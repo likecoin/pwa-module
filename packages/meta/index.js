@@ -90,7 +90,9 @@ function generateMeta (_options) {
     }
 
     if (!find(this.options.head.link, 'rel', 'apple-touch-icon')) {
-      this.options.head.link.push({ rel: 'apple-touch-icon', href: iconBig.src, sizes: iconBig.sizes })
+      options.icons.forEach(icon => {
+        this.options.head.link.push({ rel: 'apple-touch-icon', href: icon.src, sizes: icon.sizes })
+      })
     }
 
     // Launch Screen Image (IOS)
