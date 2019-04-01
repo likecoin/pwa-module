@@ -5,7 +5,7 @@ module.exports = function nuxtPWA (options) {
 
   return sequence(modules, module => {
     return this.requireModule({
-      src: `@nuxtjs/${module}`,
+      src: `@${module === 'meta' ? 'likecoin' : 'nuxtjs'}/${module}`,
       options: options[module]
     })
   })
